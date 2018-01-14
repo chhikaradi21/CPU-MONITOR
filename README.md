@@ -16,7 +16,7 @@ Follow these steps
 5. Access in browser at port 4200 (localhost:4200)
 
 ### Working Demo
-<a href="http://adityachhikara.me/cpu-monitorization?" target="_blank">See Filter Demo</a>
+<a href="http://adityachhikara.me/cpu-monitorization?" target="_blank">See System Monitor Demo</a>
 
 
 
