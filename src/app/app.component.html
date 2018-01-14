@@ -1,0 +1,46 @@
+
+<div class="row margin-bottom-100 margin-top-20">
+  <div class="col-md-12 text-center margin-bottom-50">
+    <h1> <span class="badge badge-default color-theme-default">SYSTEM MONITOR</span></h1>
+  </div>
+
+  <div class="col-md-10 offset-md-1"  >
+    <div class="jumbotron color-theme-default">
+      <h2>CPU AND RAM USAGE</h2>
+      <h5 class="card-title mb-2 text-muted"> THIS CHART'S DATA REFRESHES EVERY {{interval}} SECONDS   </h5>
+      <div class="form-group">
+        <label for="interval">Select Interval(in seconds):</label>
+        <select name="perPage" class="form-control" id="interval" [(ngModel)]="interval"
+                (ngModelChange)="setIntervalForDataRefresh(interval)">
+          <option *ngFor="let value of [1,5,10,30,60]" [value]="value" [selected]="value === 5">{{value}}</option>
+        </select>
+      </div>
+
+      <hr class="my-4 margin-top-50">
+      <h5>CPU USAGE(in percentage)</h5>
+      <div class="col-md-10">
+        <chart [type]="typeBar" [data]="barChartDataCPU" [options]="options"></chart>
+      </div>
+
+      <hr class="my-4 margin-top-50">
+      <h5>RAM USAGE(in percentage)</h5>
+      <div class="col-md-10">
+        <chart [type]="typeBar" [data]="barChartDataRAM" [options]="options"></chart>
+      </div>
+
+      <hr class="my-4 margin-top-50">
+      <h5>CPU USAGE FOR EACH 30 SECONDS(in percentage)</h5>
+      <div class="col-md-10">
+        <chart [type]="typeLine" [data]="lineChartDataCPU" [options]="{}"></chart>
+      </div>
+
+      <hr class="my-4 margin-top-50">
+      <h5>RAM USAGE FOR EACH 30 SECONDS(in percentage)</h5>
+      <div class="col-md-10">
+        <chart [type]="typeLine" [data]="lineChartDataRAM" [options]="{}"></chart>
+      </div>
+
+    </div>
+  </div>
+
+</div>
